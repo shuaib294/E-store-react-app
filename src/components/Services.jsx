@@ -1,10 +1,10 @@
 import React from 'react'
 import {services} from '../constants'
-import ServiceCard from '../components/ServiceCard'
+import ServiceCard from './ServiceCard'
 
 const Services = () => {
   return (
-    <section>
+    <section className="padding">
     <div className="mb-10">
     <h2 className="text-4xl text-center font-palanquin font-bold">Our <span className="text-coral-red">Services</span></h2>
     </div>

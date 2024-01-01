@@ -1,14 +1,22 @@
 import React from 'react'
 import {star} from '../assets/icons'
+import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import { ShopContext } from '../Context/ShopContext'
 
 
-const PopularProductCard = ({product, handleClick}) => {
+const ProductCard = ({product}) => {
+
+  const {handleClick} = useContext(ShopContext);
+
   return (
-    <div className="flex flex-1 flex-col w-full items-center max-sm:w-full rounded-xl shadow-lg p-2">
+    <div className="flex flex-1 flex-col w-full items-center max-sm:w-full rounded-xl shadow-lg p-2 bg-white">
+      <Link to={`/product/${product.id}`}>
       <img 
         src={product.imgURL} alt={product.name}
         className="w-[280px] h-[280px]"
       />
+      </Link>
       <div className="mt-8 flex justify-start gap-2.5">
         <img 
             src={star}
@@ -25,4 +33,4 @@ const PopularProductCard = ({product, handleClick}) => {
   )
 }
 
-export default PopularProductCard
+export default ProductCard

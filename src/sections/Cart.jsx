@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { ShopContext } from '../Context/ShopContext';
+import { star } from '../assets/icons';
 
-const Cart = ({cart, setCart, setShow}) => {
+const Cart = () => {
+
+  const {cart, setCart} = useContext(ShopContext);
 
   const [price, setPrice] = useState(0);
 
@@ -19,7 +25,7 @@ const Cart = ({cart, setCart, setShow}) => {
 
   useEffect(() => {
     handlePrice();
-  })
+  }) 
 
   return (
     <div>
@@ -34,8 +40,17 @@ const Cart = ({cart, setCart, setShow}) => {
             className="w-[280px] h-[280px]"
             />
             <div>
-            <h3 className="mt-2 text-2xl leading-normal font-semibold font-palanquin">{item.name}</h3>
-            <p className="mt-2 font-semibold font-montserrat text-coral-red text-2xl">$ {item.price}</p>
+
+               <h2 className="text-4xl font-palanquin font-semibold">{item.name}</h2>
+               <div className="flex items-center">
+               <img  className="h-3" src={star}/>
+               <img  className="h-3" src={star}/>
+               <img  className="h-3" src={star}/>
+               <img  className="h-3" src={star}/>
+               <img  className="h-3" src={star}/>
+               <p className='text-slate-gray mx-2'>(122)</p>
+            </div>
+            <h5 className="text-3xl text-slate-gray font-montserrat font-semi-bold mt-5">$ {item.price}</h5>
             <button onClick={()=> handleRemove(item.name)} className="rounded-lg text-white bg-coral-red font-palanquin font-semibold text-2xl p-3 m-2">Remove</button>
             </div>
           </div>
@@ -47,7 +62,7 @@ const Cart = ({cart, setCart, setShow}) => {
             <span className="font-semibold text-4xl"> {price}</span>
       </div>
       <div className="flex justify-center mt-5">
-        <button onClick={() => setShow(true)} className="rounded-lg text-white bg-coral-red font-palanquin font-semibold text-2xl p-3 m-2">Back to Home</button>
+        <Link to="/"><button className="rounded-lg text-white bg-coral-red font-palanquin font-semibold text-2xl p-3 m-2">Back to Home</button></Link>
       </div>
     </div>
   )

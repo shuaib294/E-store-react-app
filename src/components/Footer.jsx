@@ -3,7 +3,7 @@ import { socialMedia } from '../constants'
 
 const Footer = () => {
   return (
-    <foooter className="flex justify-center items-center">
+    <foooter className="flex justify-center items-center bg-black py-10 ">
         <div className="flex flex-col items-center">
           <a href="/">
             <h1 className="text-white-400 font-palanquin font-semibold text-4xl">E-Store</h1>

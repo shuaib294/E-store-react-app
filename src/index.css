@@ -21,10 +21,15 @@
 
 @layer utilities {
   .padding {
-    @apply sm:px-16  px-8 sm:py-44 py-44;
+    @apply sm:px-16  px-8 sm:py-32 py-32;
   }
 
   .warning{
     @apply h-[40px] bg-coral-red absolute right-2 top-10  w-[250px] text-white-400 text-2xl font-semibold p-2 rounded-md z-10;
   }
+
+  .input{
+    @apply xl:h-[60px] h-[50px] xl:w-[450px] w-[400px] xl:m-5 m-3 text-2xl text-center;
+  }
+
 }
